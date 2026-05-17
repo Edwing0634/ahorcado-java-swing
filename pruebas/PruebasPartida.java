@@ -11,6 +11,8 @@ import modelo.BancoPalabrasException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import modelo.Partida;
+import modelo.ResultadoIntento;
 
 /**
  * Runner manual de pruebas de la lógica pura (sin Swing).
@@ -28,6 +30,10 @@ public class PruebasPartida {
         pruebaPalabraNormaliza();
         pruebaNivelesDificultad();
         pruebaBancoPalabras();
+        pruebaPartidaAciertosYFallos();
+        pruebaPartidaGanar();
+        pruebaPartidaPerder();
+        pruebaPartidaPistas();
 
         System.out.println("\n=== Resultado: " + pasadas + " pasadas, " + fallidas + " fallidas ===");
         if (fallidas > 0) {
@@ -132,6 +138,112 @@ public class PruebasPartida {
             lanzo = true;
         }
         afirmar("Archivo inexistente lanza BancoPalabrasException", lanzo);
+    }
+
+    static Partida nuevaPartidaCon(String texto, Categoria cat, String pista,
+                                   NivelDificultad nivel) {
+        return new Partida(new Palabra(texto, cat, pista), nivel);
+    }
+
+    static void pruebaPartidaAciertosYFallos() {
+        Partida p = nuevaPartidaCon("sol", Categoria.OBJETOS,
+                "ilumina de día", new Facil());
+
+        afirmarIgual("Palabra visible inicial oculta",
+                "_ _ _", p.getPalabraVisible());
+        afirmarIgual("Intentos iniciales = 8 (Fácil)",
+                8, p.getIntentosRestantes());
+
+        afirmarIgual("Acertar 's' devuelve ACIERTO",
+                ResultadoIntento.ACIERTO, p.intentarLetra('s'));
+        afirmarIgual("Visible tras 's'", "s _ _", p.getPalabraVisible());
+        afirmarIgual("Intentos siguen en 8 tras acierto",
+                8, p.getIntentosRestantes());
+
+        afirmarIgual("Fallar 'z' devuelve FALLO",
+                ResultadoIntento.FALLO, p.intentarLetra('z'));
+        afirmarIgual("Intentos bajan a 7 tras fallo",
+                7, p.getIntentosRestantes());
+        afirmarIgual("Errores cometidos = 1", 1, p.getErroresCometidos());
+        afirmar("Letras falladas contiene 'z'",
+                p.getLetrasFalladas().contains('z'));
+
+        afirmarIgual("Repetir 's' devuelve YA_USADA",
+                ResultadoIntento.YA_USADA, p.intentarLetra('s'));
+        afirmarIgual("Repetir 'z' devuelve YA_USADA",
+                ResultadoIntento.YA_USADA, p.intentarLetra('z'));
+        afirmarIgual("Intentos no cambian tras YA_USADA (siguen 7)",
+                7, p.getIntentosRestantes());
+
+        afirmar("Acierto con tilde: 'í' en \"león\" cuenta",
+                nuevaPartidaCon("león", Categoria.ANIMALES, "rey de la selva",
+                        new Facil()).intentarLetra('o') == ResultadoIntento.ACIERTO);
+    }
+
+    static void pruebaPartidaGanar() {
+        Partida p = nuevaPartidaCon("sol", Categoria.OBJETOS,
+                "ilumina de día", new Facil());
+        p.intentarLetra('s');
+        p.intentarLetra('o');
+        afirmar("No ganada aún", !p.estaGanada());
+        p.intentarLetra('l');
+        afirmar("Ganada al completar la palabra", p.estaGanada());
+        afirmar("estaTerminada true tras ganar", p.estaTerminada());
+        afirmar("No está perdida", !p.estaPerdida());
+        afirmarIgual("Visible muestra palabra completa",
+                "s o l", p.getPalabraVisible());
+    }
+
+    static void pruebaPartidaPerder() {
+        Partida p = nuevaPartidaCon("sol", Categoria.OBJETOS,
+                "ilumina de día", new Dificil()); // 6 intentos
+        char[] malas = { 'a', 'b', 'c', 'd', 'e', 'f' };
+        for (char c : malas) {
+            p.intentarLetra(c);
+        }
+        afirmarIgual("Tras 6 fallos, intentos = 0", 0, p.getIntentosRestantes());
+        afirmar("Está perdida", p.estaPerdida());
+        afirmar("estaTerminada true tras perder", p.estaTerminada());
+        afirmar("No está ganada", !p.estaGanada());
+        afirmarIgual("Errores cometidos = 6", 6, p.getErroresCometidos());
+    }
+
+    static void pruebaPartidaPistas() {
+        Partida p = nuevaPartidaCon("camino", Categoria.OBJETOS,
+                "se recorre a pie", new Facil()); // 3 pistas
+
+        afirmarIgual("Pistas restantes iniciales = 3 (Fácil)",
+                3, p.getPistasRestantes());
+
+        String p1 = p.usarPista();
+        afirmar("Pista 1 menciona la categoría (Objetos)",
+                p1.toLowerCase().contains("objetos"));
+        afirmarIgual("Pistas restantes = 2 tras pista 1",
+                2, p.getPistasRestantes());
+
+        String p2 = p.usarPista();
+        afirmar("Pista 2 revela una letra (visible ya no está todo oculto)",
+                !p.getPalabraVisible().equals("_ _ _ _ _ _"));
+        afirmar("Pista 2 devuelve texto no vacío", !p2.isBlank());
+
+        String p3 = p.usarPista();
+        afirmar("Pista 3 es la pista escrita",
+                p3.contains("se recorre a pie"));
+        afirmarIgual("Pistas restantes = 0 tras usar las 3",
+                0, p.getPistasRestantes());
+
+        String p4 = p.usarPista();
+        afirmar("Pista 4 (sin pistas) avisa que no quedan",
+                p4.toLowerCase().contains("no") );
+
+        // En Difícil solo hay 1 pista
+        Partida d = nuevaPartidaCon("biblioteca", Categoria.OBJETOS,
+                "guarda libros", new Dificil());
+        afirmarIgual("Difícil: 1 pista disponible",
+                1, d.getPistasRestantes());
+        d.usarPista();
+        afirmarIgual("Difícil: 0 pistas tras usar la única",
+                0, d.getPistasRestantes());
     }
 
     // ---- utilidades de aserción ----
