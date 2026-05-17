@@ -1,4 +1,5 @@
 import modelo.Categoria;
+import modelo.Palabra;
 
 /**
  * Runner manual de pruebas de la lógica pura (sin Swing).
@@ -13,6 +14,7 @@ public class PruebasPartida {
         System.out.println("=== Pruebas de la lógica del Ahorcado ===\n");
 
         pruebaCategoriaTieneCincoValores();
+        pruebaPalabraNormaliza();
 
         System.out.println("\n=== Resultado: " + pasadas + " pasadas, " + fallidas + " fallidas ===");
         if (fallidas > 0) {
@@ -25,6 +27,19 @@ public class PruebasPartida {
                 Categoria.values().length == 5);
         afirmar("Categoria.ANIMALES tiene nombre legible no vacío",
                 !Categoria.ANIMALES.getNombreLegible().isBlank());
+    }
+
+    static void pruebaPalabraNormaliza() {
+        Palabra p = new Palabra("Camión", Categoria.OBJETOS, "Sirve para transportar carga");
+        afirmarIgual("getTexto conserva original", "Camión", p.getTexto());
+        afirmarIgual("getTextoNormalizado quita tildes y pasa a minúscula",
+                "camion", p.getTextoNormalizado());
+        afirmarIgual("getCategoria correcta", Categoria.OBJETOS, p.getCategoria());
+        afirmarIgual("getPista correcta",
+                "Sirve para transportar carga", p.getPista());
+        afirmar("normalizarLetra('Á') == 'a'", Palabra.normalizarLetra('Á') == 'a');
+        afirmar("normalizarLetra('Ñ') == 'ñ' (la Ñ se conserva)",
+                Palabra.normalizarLetra('Ñ') == 'ñ');
     }
 
     // ---- utilidades de aserción ----
