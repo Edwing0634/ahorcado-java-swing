@@ -1,0 +1,204 @@
+# Banco de palabras del Juego del Ahorcado
+# Formato: CATEGORIA;palabra;pista
+# Categorias validas: ANIMALES, PAISES, DEPORTES, OBJETOS, COMIDAS
+
+ANIMALES;gato;Felino domestico que maulla
+ANIMALES;leon;Es el rey de la selva
+ANIMALES;oso;Mamifero grande que hiberna
+ANIMALES;pez;Vive en el agua y tiene aletas
+ANIMALES;rana;Anfibio que salta y croa
+ANIMALES;lobo;Canido salvaje que aulla
+ANIMALES;mono;Primate muy agil y jugueton
+ANIMALES;pato;Ave acuatica que hace cuac
+ANIMALES;toro;Bovino macho de gran fuerza
+ANIMALES;cabra;Da leche y trepa montanas
+ANIMALES;perro;El mejor amigo del hombre
+ANIMALES;tigre;Felino rayado de Asia
+ANIMALES;burro;Equino de carga muy terco
+ANIMALES;cisne;Ave blanca de cuello largo
+ANIMALES;abeja;Insecto que produce miel
+ANIMALES;zorro;Canido astuto de cola peluda
+ANIMALES;buho;Ave nocturna de ojos grandes
+ANIMALES;foca;Mamifero marino que aplaude
+ANIMALES;puma;Felino americano sin melena
+ANIMALES;loro;Ave colorida que imita voces
+ANIMALES;caballo;Equino veloz para montar
+ANIMALES;conejo;Roedor de orejas largas
+ANIMALES;ardilla;Roedor que guarda nueces
+ANIMALES;tortuga;Reptil lento con caparazon
+ANIMALES;delfin;Mamifero marino muy listo
+ANIMALES;gallina;Ave de corral que pone huevos
+ANIMALES;serpiente;Reptil sin patas que repta
+ANIMALES;elefante;Mamifero terrestre mas grande
+ANIMALES;jirafa;Tiene el cuello mas largo
+ANIMALES;canguro;Marsupial saltarin de Australia
+ANIMALES;cocodrilo;Reptil de rio con grandes fauces
+ANIMALES;mariposa;Insecto de alas coloridas
+ANIMALES;murcielago;Unico mamifero que vuela
+ANIMALES;rinoceronte;Tiene cuerno sobre la nariz
+ANIMALES;hipopotamo;Pasa el dia dentro del agua
+ANIMALES;chimpance;Primate muy inteligente
+ANIMALES;flamenco;Ave rosada de una pata
+ANIMALES;pinguino;Ave que nada y no vuela
+ANIMALES;escorpion;Aracnido con aguijon venenoso
+ANIMALES;avestruz;Ave mas grande que no vuela
+PAISES;peru;Pais de Machu Picchu
+PAISES;cuba;Isla del Caribe y los puros
+PAISES;chile;Pais largo y angosto del sur
+PAISES;china;Pais mas poblado de Asia
+PAISES;haiti;Comparte isla con Republica Dominicana
+PAISES;italia;Pais con forma de bota
+PAISES;japon;Pais del sol naciente
+PAISES;egipto;Pais de las piramides
+PAISES;rusia;El pais mas extenso del mundo
+PAISES;india;Pais del Taj Mahal
+PAISES;brasil;Pais del carnaval y el futbol
+PAISES;mexico;Pais de los mariachis
+PAISES;canada;Pais de la hoja de arce
+PAISES;francia;Pais de la torre Eiffel
+PAISES;turquia;Pais entre Europa y Asia
+PAISES;grecia;Cuna de la democracia
+PAISES;noruega;Pais de los fiordos
+PAISES;suecia;Pais nordico de Estocolmo
+PAISES;polonia;Pais de Europa central
+PAISES;bolivia;Pais del salar de Uyuni
+PAISES;ecuador;Pais sobre la mitad del mundo
+PAISES;uruguay;Pais del mate y el tango
+PAISES;espana;Pais del flamenco y la paella
+PAISES;alemania;Pais de la Selva Negra
+PAISES;portugal;Pais vecino de Espana
+PAISES;paraguay;Pais sin salida al mar en Sudamerica
+PAISES;colombia;Pais del cafe y las esmeraldas
+PAISES;tailandia;Pais del sudeste asiatico
+PAISES;argentina;Pais de la Patagonia y el tango
+PAISES;venezuela;Pais del salto Angel
+PAISES;australia;Pais isla y continente
+PAISES;indonesia;Pais con miles de islas
+PAISES;singapur;Ciudad estado del sudeste asiatico
+PAISES;dinamarca;Pais nordico de los Lego
+PAISES;finlandia;Pais de las auroras boreales
+PAISES;guatemala;Pais maya de Centroamerica
+PAISES;nicaragua;Pais de los lagos y volcanes
+PAISES;honduras;Pais centroamericano del coral
+PAISES;marruecos;Pais del norte de Africa
+PAISES;suiza;Pais de los Alpes y el queso
+DEPORTES;golf;Se juega con palos y hoyos
+DEPORTES;judo;Arte marcial japones de agarres
+DEPORTES;remo;Se practica en bote con palas
+DEPORTES;esqui;Se baja la montana con tablas
+DEPORTES;boxeo;Combate con guantes en un ring
+DEPORTES;tenis;Se juega con raqueta y red
+DEPORTES;rugby;Balon ovalado y mucho contacto
+DEPORTES;futbol;El deporte rey del balon
+DEPORTES;karate;Arte marcial de golpes secos
+DEPORTES;hockey;Se juega con stick y disco
+DEPORTES;surf;Se desliza sobre las olas
+DEPORTES;polo;Deporte ecuestre con mazos
+DEPORTES;pesca;Atrapar peces con cana
+DEPORTES;ciclismo;Competencia sobre bicicletas
+DEPORTES;atletismo;Carreras saltos y lanzamientos
+DEPORTES;natacion;Competir nadando en piscina
+DEPORTES;voleibol;Balon por encima de una red alta
+DEPORTES;beisbol;Bate pelota y bases
+DEPORTES;esgrima;Combate con espada o florete
+DEPORTES;gimnasia;Acrobacias y flexibilidad
+DEPORTES;ajedrez;Deporte mental de reyes y peones
+DEPORTES;balonmano;Similar al futbol pero con manos
+DEPORTES;baloncesto;Encestar en un aro alto
+DEPORTES;ciclomontanismo;Ciclismo por terreno agreste
+DEPORTES;automovilismo;Competir en autos de carreras
+DEPORTES;patinaje;Deslizarse con patines
+DEPORTES;triatlon;Nadar pedalear y correr
+DEPORTES;halterofilia;Levantamiento de pesas
+DEPORTES;senderismo;Caminar por rutas naturales
+DEPORTES;escalada;Subir paredes de roca
+DEPORTES;windsurf;Tabla con vela sobre el agua
+DEPORTES;motociclismo;Carreras en motocicleta
+DEPORTES;clavados;Saltos al agua desde altura
+DEPORTES;badminton;Raqueta y volante con plumas
+DEPORTES;tirolesa;Deslizarse por un cable colgante
+DEPORTES;parapente;Volar con vela ligera
+DEPORTES;canotaje;Navegar en canoa o kayak
+DEPORTES;esquiacuatico;Esquiar sobre el agua
+DEPORTES;piraguismo;Remar en piragua por aguas
+DEPORTES;futsal;Futbol de salon cinco contra cinco
+OBJETOS;mesa;Mueble con patas para apoyar cosas
+OBJETOS;silla;Mueble para sentarse
+OBJETOS;reloj;Indica la hora
+OBJETOS;libro;Conjunto de hojas con texto
+OBJETOS;vaso;Recipiente para beber
+OBJETOS;llave;Abre y cierra cerraduras
+OBJETOS;lapiz;Sirve para escribir y borrar
+OBJETOS;telefono;Sirve para comunicarse a distancia
+OBJETOS;espejo;Refleja tu imagen
+OBJETOS;peine;Sirve para arreglar el cabello
+OBJETOS;martillo;Sirve para clavar clavos
+OBJETOS;tijeras;Sirven para cortar papel
+OBJETOS;paraguas;Protege de la lluvia
+OBJETOS;mochila;Se carga en la espalda
+OBJETOS;botella;Recipiente para liquidos
+OBJETOS;linterna;Da luz portatil
+OBJETOS;cuchara;Cubierto para sopa
+OBJETOS;tenedor;Cubierto con puas
+OBJETOS;cuchillo;Cubierto para cortar
+OBJETOS;escoba;Sirve para barrer el piso
+OBJETOS;computadora;Maquina para procesar datos
+OBJETOS;televisor;Muestra imagenes y sonido
+OBJETOS;refrigerador;Conserva los alimentos frios
+OBJETOS;destornillador;Aprieta y afloja tornillos
+OBJETOS;calculadora;Realiza operaciones matematicas
+OBJETOS;bicicleta;Vehiculo de dos ruedas a pedal
+OBJETOS;almohada;Apoya la cabeza al dormir
+OBJETOS;cargador;Recarga la bateria de aparatos
+OBJETOS;ventilador;Mueve el aire para refrescar
+OBJETOS;microondas;Calienta comida con ondas
+OBJETOS;auriculares;Sirven para escuchar sin molestar
+OBJETOS;cafetera;Prepara cafe caliente
+OBJETOS;aspiradora;Recoge el polvo del suelo
+OBJETOS;impresora;Pasa documentos al papel
+OBJETOS;billetera;Guarda dinero y tarjetas
+OBJETOS;binoculares;Acercan objetos lejanos
+OBJETOS;termometro;Mide la temperatura
+OBJETOS;cinturon;Sujeta el pantalon
+OBJETOS;sombrilla;Da sombra en la playa
+OBJETOS;cuaderno;Hojas para tomar apuntes
+COMIDAS;pan;Se hace con harina y se hornea
+COMIDAS;sopa;Plato liquido y caliente
+COMIDAS;arroz;Grano blanco muy comun
+COMIDAS;huevo;Lo pone la gallina
+COMIDAS;pollo;Carne blanca de ave
+COMIDAS;queso;Derivado de la leche
+COMIDAS;pizza;Plato italiano redondo con queso
+COMIDAS;pasta;Espagueti y macarrones
+COMIDAS;fruta;Alimento dulce de las plantas
+COMIDAS;carne;Alimento de origen animal
+COMIDAS;pera;Fruta dulce con forma de gota
+COMIDAS;uva;Fruta pequena de la vid
+COMIDAS;mango;Fruta tropical anaranjada
+COMIDAS;limon;Citrico amarillo y acido
+COMIDAS;papa;Tuberculo para freir o cocer
+COMIDAS;maiz;Cereal de mazorca amarilla
+COMIDAS;leche;Bebida blanca de la vaca
+COMIDAS;jamon;Embutido de cerdo
+COMIDAS;torta;Postre dulce de cumpleanos
+COMIDAS;galleta;Dulce crujiente para el cafe
+COMIDAS;banano;Fruta amarilla y alargada
+COMIDAS;naranja;Citrico redondo y dulce
+COMIDAS;sandia;Fruta verde y roja por dentro
+COMIDAS;tomate;Rojo y jugoso para ensalada
+COMIDAS;cebolla;Bulbo que hace llorar
+COMIDAS;lechuga;Hoja verde para ensalada
+COMIDAS;pescado;Carne que viene del mar
+COMIDAS;chocolate;Dulce hecho de cacao
+COMIDAS;empanada;Masa rellena y frita
+COMIDAS;ensalada;Mezcla de vegetales frescos
+COMIDAS;hamburguesa;Carne en pan con vegetales
+COMIDAS;sandwich;Relleno entre dos panes
+COMIDAS;mandarina;Citrico facil de pelar
+COMIDAS;zanahoria;Raiz naranja buena para la vista
+COMIDAS;espinaca;Hoja verde rica en hierro
+COMIDAS;aguacate;Fruto verde y cremoso
+COMIDAS;mantequilla;Grasa para untar el pan
+COMIDAS;mermelada;Dulce de fruta para untar
+COMIDAS;yogurt;Lacteo cremoso y acido
+COMIDAS;durazno;Fruta de piel aterciopelada
