@@ -14,3 +14,6 @@
 # SO
 Thumbs.db
 .DS_Store
+
+# Claude Code (config local)
+.claude/
