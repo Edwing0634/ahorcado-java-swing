@@ -6,6 +6,11 @@ import modelo.Medio;
 import modelo.Dificil;
 import java.util.ArrayList;
 import java.util.List;
+import modelo.BancoPalabras;
+import modelo.BancoPalabrasException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
 /**
  * Runner manual de pruebas de la lógica pura (sin Swing).
@@ -22,6 +27,7 @@ public class PruebasPartida {
         pruebaCategoriaTieneCincoValores();
         pruebaPalabraNormaliza();
         pruebaNivelesDificultad();
+        pruebaBancoPalabras();
 
         System.out.println("\n=== Resultado: " + pasadas + " pasadas, " + fallidas + " fallidas ===");
         if (fallidas > 0) {
@@ -86,6 +92,46 @@ public class PruebasPartida {
             totalFiltrado += n.filtrarPalabras(banco).size();
         }
         afirmarIgual("Suma de filtrados polimórficos = 3", 3, totalFiltrado);
+    }
+
+    static void pruebaBancoPalabras() {
+        try {
+            // Crear un archivo temporal de prueba
+            Path tmp = Files.createTempFile("banco_test", ".txt");
+            List<String> lineas = new ArrayList<>();
+            lineas.add("ANIMALES;gato;Maulla y caza ratones");
+            lineas.add("PAISES;brasil;País del carnaval");
+            lineas.add("# comentario que se ignora");
+            lineas.add("");                       // vacía: se ignora
+            lineas.add("LINEA_MAL_FORMADA");      // sin ';': se ignora
+            lineas.add("CATEGORIA_INVALIDA;x;y"); // categoría inexistente: se ignora
+            lineas.add("DEPORTES;futbol;Se juega con los pies");
+            Files.write(tmp, lineas);
+
+            BancoPalabras banco = new BancoPalabras(tmp.toString());
+            banco.cargar();
+
+            afirmarIgual("Banco carga 3 palabras válidas (ignora 4 inválidas)",
+                    3, banco.getCantidad());
+            afirmar("palabraAleatoria(Facil) devuelve no nulo",
+                    banco.palabraAleatoria(new Facil()) != null);
+            // 'gato'(4) apta para Fácil; 'brasil'(6) y 'futbol'(6) para Medio
+            afirmarIgual("Banco filtra 1 palabra para Fácil (gato)",
+                    "gato", banco.palabraAleatoria(new Facil()).getTexto());
+
+            Files.deleteIfExists(tmp);
+        } catch (IOException e) {
+            afirmar("No debería lanzar IOException: " + e.getMessage(), false);
+        }
+
+        // Archivo inexistente debe lanzar BancoPalabrasException
+        boolean lanzo = false;
+        try {
+            new BancoPalabras("ruta/que/no/existe_xyz.txt").cargar();
+        } catch (BancoPalabrasException e) {
+            lanzo = true;
+        }
+        afirmar("Archivo inexistente lanza BancoPalabrasException", lanzo);
     }
 
     // ---- utilidades de aserción ----
