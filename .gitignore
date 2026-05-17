@@ -1,0 +1,16 @@
+# Compilados Java
+*.class
+/out/
+*.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+
+# SO
+Thumbs.db
+.DS_Store
