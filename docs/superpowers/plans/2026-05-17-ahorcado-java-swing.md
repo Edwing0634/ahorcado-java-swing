@@ -617,7 +617,7 @@ $archivos = Get-ChildItem -Recurse -Filter *.java -Path src,pruebas | ForEach-Ob
 javac -encoding UTF-8 -d out $archivos
 java -cp out PruebasPartida
 ```
-Expected: todas las aserciones de niveles `✓`, `Resultado: 22 pasadas, 0 fallidas`.
+Expected: todas las aserciones de niveles `✓`, `Resultado: 21 pasadas, 0 fallidas`.
 
 - [ ] **Step 8: Commit**
 
