@@ -17,3 +17,6 @@ Thumbs.db
 
 # Claude Code (config local)
 .claude/
+
+# Guion de video — apoyo personal para grabar, no se publica
+docs/guion-video.md

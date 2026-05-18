@@ -123,7 +123,7 @@ Diseño en **3 capas** desacopladas:
  └── 📂 controlador/   🔗 Une vista y modelo
 📄 recursos/palabras.txt   📚 Banco de 200 palabras
 📁 pruebas/                🧪 Pruebas de la lógica
-📁 docs/                   📖 Diagrama de clases, manual, guion de video
+📁 docs/                   📖 Diagrama de clases y manual de usuario
 ```
 
 ### 🧩 Conceptos de POO aplicados
